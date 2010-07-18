@@ -1,0 +1,5 @@
+.bundle/
+.rvmrc
+log/*.log
+pkg/
+spec/dummy

@@ -1,0 +1,56 @@
+= YeqsSexybuttons
+
+This project rocks and uses MIT-LICENSE.
+
+== Installation
+
+Install yeqs_sexybuttons as a gem and get it work with your rails 3 applications.
+
+  gem install yeqs_sexybuttons
+
+Add yeqs_sexybuttons to your Gemfile.
+
+  gem 'yeqs_sexybuttons'
+
+Generate the assets of yeqs_sexybuttons.
+
+  rails g yeqs:sexybuttons
+
+== Usage
+
+Yeqs Sexybuttons provide a view helper to generate a sexybutton. First of all, your need to add a sexybuttons css to your layout.
+
+  <link type="text/css" media="screen" href="/components/SexyButtons/sexybuttons.css" />
+
+Generate a linkage.
+
+  <%= 
+      sexybutton do |b|
+        b.style = 'simple'                # default is simple
+        b.color = 'orange'                # default is black
+        b.image = 'google'                # optional
+        b.text = 'Google'
+        b.url = 'http://www.google.com'
+      end
+  %>
+
+This will generate a link as follows:
+
+  <a class="sexybutton sexysimple sexyorange" href="http://www.google.com"><span class="google">Google</span></a>
+
+Generate a submit button.
+
+  <%= 
+      sexybutton do |b|
+        b.type = 'submit'                 # optional
+        b.style = 'simple'                # default is simple
+        b.color = 'orange'                # default is black
+        b.image = 'save'                  # optional
+        b.text = 'Save'
+      end
+  %>
+
+This will generate a button as follows:
+
+  <button class="sexybutton sexysimple sexyorange" type="submit"><span class="save">Save</span></button>
+
