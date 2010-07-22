@@ -1,6 +1,7 @@
 module HighchartsHelper
-  def pie(series)
+  def highchart(type, series)
     options = Options.new
+    options.type = type
     yield options if block_given?
     output = content_tag(:script, generate_scripts(series, options), :type => 'text/javascript')
     output << content_tag(:div, "", :id => options.render_to, :style => "width:#{options.width}px; height:#{options.height}px;")
@@ -8,7 +9,8 @@ module HighchartsHelper
 
   private
   class Options
-    attr_accessor :render_to, :title, :ytitle, :tooltip, :width, :height
+    attr_accessor :render_to, :title, :ytitle
+    attr_accessor :type, :tooltip, :width, :height
 
     def initialize
       self.render_to = 'chart-container'
@@ -25,6 +27,7 @@ module HighchartsHelper
     $(function() {
       new Highcharts.Chart({
         chart: {
+          defaultSeriesType: '#{options.type.to_s}',
           renderTo: '#{options.render_to}',
           margin: [50, 200, 60, 170]
         },

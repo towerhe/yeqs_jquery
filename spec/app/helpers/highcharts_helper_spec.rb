@@ -11,7 +11,7 @@ module Yeqs
       
       it "should generate scripts to create the pie chart and the target div to which pie will be rendered" do
         series = [{ :data => [['A', 10], ['B', 20], ['C', 70]] }]
-        html = @obj.pie(series) do |o|
+        html = @obj.highchart(:pie, series) do |o|
           o.render_to = 'pie-container'
           o.title = 'Pie chart for test'
           o.ytitle = 'Y Axis'
@@ -24,6 +24,7 @@ module Yeqs
     $(function() {
       new Highcharts.Chart({
         chart: {
+          defaultSeriesType: 'pie',
           renderTo: 'pie-container',
           margin: [50, 200, 60, 170]
         },

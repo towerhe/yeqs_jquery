@@ -63,9 +63,9 @@ this will produce html like:
 
   <script type="text/javascript" src="/components/jqueryhighcharts/js/highcharts.js"></script>
 
-Create pie chart:
+Create chart:
 
-  <%= pie(@data) do |o|
+  <%= highchart(:pie, @series) do |o|
     o.render_to = 'pie-container'
     o.title = 'Pie chart for test'
     o.tooltip = "'<b>' + this.name + ': </b>' + this.y + '%'"
@@ -73,4 +73,4 @@ Create pie chart:
     o.height = 400
   end %>
 
-  # @data = [['Label A', 10], ['Label B', 20], ['Label C', 70]]
+  # @series = [{ :data => [['Label A', 10], ['Label B', 20], ['Label C', 70]] }]
