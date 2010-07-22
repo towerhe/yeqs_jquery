@@ -12,14 +12,14 @@ task :default => :spec
 
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'YeqsSexybuttons'
+  rdoc.title    = 'YeqsJquery'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('app/**/*.rb')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-spec = eval(File.read('yeqs_sexybuttons.gemspec'))
+spec = eval(File.read('yeqs_jquery.gemspec'))
 Rake::GemPackageTask.new(spec) do |pkg|
     pkg.gem_spec = spec
 end

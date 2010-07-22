@@ -1,56 +1,76 @@
-= YeqsSexybuttons
+= YeqsJquery
 
 This project rocks and uses MIT-LICENSE.
 
 == Installation
 
-Install yeqs_sexybuttons as a gem and get it work with your rails 3 applications.
+Install yeqs_jquery as a gem and get it work with your rails 3 applications.
 
-  gem install yeqs_sexybuttons
+  gem install yeqs_jquery
 
-Add yeqs_sexybuttons to your Gemfile.
+Add yeqs_jquery to your Gemfile.
 
-  gem 'yeqs_sexybuttons'
+  gem 'yeqs_jquery'
 
-Generate the assets of yeqs_sexybuttons.
+Generate the assets of jquery related components.
 
-  rails g yeqs:sexybuttons
+  rails g yeqs:jquery core
+  rails g yeqs:jquery ui
+  rails g yeqs:jquery tools
+  rails g yeqs:jquery rails
+  rails g yeqs:jquery highcharts
 
 == Usage
 
-Yeqs Sexybuttons provide a view helper to generate a sexybutton. First of all, your need to add a sexybuttons css to your layout.
+Jquery is the basic component of all the jquery related components. You should include jquery component in your views at first.
 
-  <link type="text/css" media="screen" href="/components/SexyButtons/sexybuttons.css" />
+  <%= include_jquery %>
 
-Generate a linkage.
+this will produce html like:
 
-  <%= 
-      sexybutton do |b|
-        b.style = 'simple'                # default is simple
-        b.color = 'orange'                # default is black
-        b.image = 'google'                # optional
-        b.text = 'Google'
-        b.url = 'http://www.google.com'
-      end
-  %>
+  <script type="text/javascript" src="/components/jquery/jquery-1.4.2.min.js"></script>
 
-This will generate a link as follows:
+In order to use jqueryui, you should include jqueryui scripts and stylesheets in your views.
 
-  <a class="sexybutton sexysimple sexyorange" href="http://www.google.com"><span class="google">Google</span></a>
+  <%= include_jqueryui %>
 
-Generate a submit button.
+this will produce html like:
 
-  <%= 
-      sexybutton do |b|
-        b.type = 'submit'                 # optional
-        b.style = 'simple'                # default is simple
-        b.color = 'orange'                # default is black
-        b.image = 'save'                  # optional
-        b.text = 'Save'
-      end
-  %>
+  <link type="text/css" media="screen" ref="stylesheet" href="/components/jqueryui/css/smoothness/jquery-ui-1.8.2.custom.css" />
+  <script type="text/javascript" src="/components/jqueryui/js/jquery-ui-1.8.2.custom.min.js"></script>
 
-This will generate a button as follows:
+In order to use jquerytools, you should include jquerytools scripts in your views.
 
-  <button class="sexybutton sexysimple sexyorange" type="submit"><span class="save">Save</span></button>
+  <%= include_jquerytools %>
 
+this will produce html like:
+
+  <script type="text/javascript" src="/components/jquerytools/jquery.tools.min.js"></script>
+
+In order to use jquery rails support, you should include jquery rails scripts in your views.
+
+  <%= include_jqueryrails %>
+
+this will produce html like:
+
+  <script type="text/javascript" src="/components/jqueryrails/rails.js"></script>
+
+In order to use highcharts, you should include highcharts scripts in your views.
+
+  <%= include_jqueryhighcharts %>
+
+this will produce html like:
+
+  <script type="text/javascript" src="/components/jqueryhighcharts/js/highcharts.js"></script>
+
+Create pie chart:
+
+  <%= pie(@data) do |o|
+    o.render_to = 'pie-container'
+    o.title = 'Pie chart for test'
+    o.tooltip = "'<b>' + this.name + ': </b>' + this.y + '%'"
+    o.width = 800
+    o.height = 400
+  end %>
+
+  # @data = [['Label A', 10], ['Label B', 20], ['Label C', 70]]

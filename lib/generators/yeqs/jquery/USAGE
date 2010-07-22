@@ -1,0 +1,8 @@
+Description:
+    Generate the assets of jquery related components.
+
+Example:
+    rails generate yeqs:jquery COMPONENT
+
+    This will create:
+        public/components/jquery#{COMPONENT}
