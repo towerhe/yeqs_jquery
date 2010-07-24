@@ -1,3 +1,11 @@
+v0.0.4 (Jul 24, 2010)
+
+* fixed highchart helper method
+
+v0.0.3 (Jul 24, 2010)
+
+* use lazy_high_charts(http://github.com/michelson/lazy_high_charts) instead.
+
 v0.0.2 (Jul 22, 2010)
 
 * fixed the css uri of jquery ui.
