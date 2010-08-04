@@ -10,6 +10,6 @@ end
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta"
-  gem "capybara", ">= 6.3.8"
+  gem "capybara", ">= 0.3.8"
   gem "sqlite3-ruby", :require => "sqlite3"
 end
