@@ -1,3 +1,9 @@
+v0.0.5 (Aug 04, 2010)
+
+* modify the Gemfile.
+* use the new initializer method in rails engine to load the helpers.
+* modify the initialize process of the Highchart.
+
 v0.0.4 (Jul 24, 2010)
 
 * fixed highchart helper method

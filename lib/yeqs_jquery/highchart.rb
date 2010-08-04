@@ -10,16 +10,14 @@ module Yeqs
 
 
       def initialize(canvas = nil, html_opts = {})
-
         @collection_filter = nil
-        returning(self) do |high_chart|
-          high_chart.data       ||= []
-          high_chart.options    ||= {}
-          high_chart.defaults_options
-          high_chart.html_options = html_opts.reverse_merge(CANVAS_DEFAULT_HTML_OPTIONS)
-          high_chart.canvas       = canvas if canvas
-          yield high_chart if block_given?
-        end
+
+        self.data       ||= []
+        self.options    ||= {}
+        self.defaults_options
+        self.html_options = html_opts.reverse_merge(CANVAS_DEFAULT_HTML_OPTIONS)
+        self.canvas       = canvas if canvas
+        yield self if block_given?
       end
       
       #	title:		legend: 		xAxis: 		yAxis: 		tooltip: 	credits:  :plotOptions
