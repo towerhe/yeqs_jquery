@@ -36,7 +36,7 @@ In order to use jqueryui, you should include jqueryui scripts and stylesheets in
 
 this will produce html like:
 
-  <link type="text/css" media="screen" ref="stylesheet" href="/components/jqueryui/css/smoothness/jquery-ui-1.8.2.custom.css" />
+  <link type="text/css" media="screen" rel="stylesheet" href="/components/jqueryui/css/smoothness/jquery-ui-1.8.2.custom.css" />
   <script type="text/javascript" src="/components/jqueryui/js/jquery-ui-1.8.2.custom.min.js"></script>
 
 In order to use jquerytools, you should include jquerytools scripts in your views.
