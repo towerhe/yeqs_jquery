@@ -1,3 +1,7 @@
+v0.0.8 (Oct 18, 2010)
+
+* update to rails 3.0.1
+
 v0.0.7 (Sep 03, 2010)
 
 * upgrade to rails 3.0.0
